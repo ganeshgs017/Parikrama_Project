@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-02-28T12:27:50 IST" name="Suite" finished-at="2024-02-28T12:28:42 IST" duration-ms="51596">
+    <groups>
+    </groups>
+    <test started-at="2024-02-28T12:27:50 IST" name="Test" finished-at="2024-02-28T12:28:42 IST" duration-ms="51596">
+      <class name="com.parikrama.test.SigninTest">
+        <test-method signature="loginParikrama()[pri:0, instance:com.parikrama.test.SigninTest@48075da3]" started-at="2024-02-28T12:27:50 IST" name="loginParikrama" finished-at="2024-02-28T12:28:24 IST" duration-ms="33730" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginParikrama -->
+      </class> <!-- com.parikrama.test.SigninTest -->
+      <class name="com.parikrama.test.ReportPageTest">
+        <test-method signature="loginParikrama()[pri:0, instance:com.parikrama.test.ReportPageTest@5386659f]" started-at="2024-02-28T12:28:24 IST" name="loginParikrama" finished-at="2024-02-28T12:28:42 IST" duration-ms="17820" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginParikrama -->
+      </class> <!-- com.parikrama.test.ReportPageTest -->
+      <class name="com.parikrama.utils.Reports">
+        <test-method is-config="true" signature="startReport()[pri:0, instance:com.parikrama.utils.Reports@533bda92]" started-at="2024-02-28T12:27:50 IST" name="startReport" finished-at="2024-02-28T12:27:50 IST" duration-ms="337" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startReport -->
+        <test-method is-config="true" signature="endReport()[pri:0, instance:com.parikrama.utils.Reports@533bda92]" started-at="2024-02-28T12:28:42 IST" name="endReport" finished-at="2024-02-28T12:28:42 IST" duration-ms="377" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endReport -->
+      </class> <!-- com.parikrama.utils.Reports -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
