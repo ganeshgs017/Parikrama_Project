@@ -4,13 +4,20 @@
 	<listeners>
 		<listener class-name="com.parikrama.utils.Reports" />
 	</listeners>
-  <test thread-count="5" name="Test">
-    <classes>
+	<test thread-count="5" name="Test">
+		<classes>
+			<!--	
+				
 		
-      <class name="com.parikrama.test.SigninTest"/>
-      <class name="com.parikrama.test.ReportPageTest"/>
-       <class name="com.parikrama.utils.BaseTest"/>
-      <class name="com.parikrama.utils.Reports"/>
-    </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+    
+       -->
+			<class name="com.parikrama.test.SigninTest" />
+			<class name="com.parikrama.test.ReportPageTest" />
+			<class name="com.parikrama.test.AdminPageTest" />
+			<class name="com.parikrama.utils.BaseTest" />
+			<class name="com.parikrama.utils.Reports" />
+		</classes>
+	</test> <!--
+	Test -->
+</suite> <!--
+Suite -->

@@ -21,10 +21,15 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.sikuli.script.FindFailed;
+import org.sikuli.script.Pattern;
+import org.sikuli.script.Screen;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest  {
 	
+
 	
    public static String showInputDialog() {
 	   return JOptionPane.showInputDialog(driver);
@@ -83,9 +88,11 @@ public class BaseTest  {
 	public void waitForElement(WebElement ele) {
 
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, 20);
+			WebDriverWait wait = new WebDriverWait(driver, 30);
 			wait.until(ExpectedConditions.visibilityOf(ele));
-			wait.until(ExpectedConditions.elementToBeClickable(ele));
+			wait.until(ExpectedConditions.elementToBeClickable(ele)).click();
+			
+		
 			Reports.reportStep("PASS","The" +ele.getText()+ " waited successfully to meet the expected conditions");
 		} catch (Exception e) 
 		
@@ -101,7 +108,7 @@ public class BaseTest  {
 			
 			Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofNanos(30)).pollingEvery(Duration.ofSeconds(2));
 			wait.until(ExpectedConditions.visibilityOf(ele));
-			wait.until(ExpectedConditions.elementToBeClickable(ele));
+			wait.until(ExpectedConditions.elementToBeClickable(ele)).click();
 			
 			Reports.reportStep("PASS","The" +ele.getText()+ " waited successfully to meet the expected conditions");
 		}
@@ -192,6 +199,7 @@ public class BaseTest  {
 		try {
 			Actions action = new Actions(driver);
 			action.moveToElement(ele).build().perform();
+			action.click();
 		} 
 		catch (Exception e) {
 
@@ -381,6 +389,8 @@ public class BaseTest  {
 			
 			JavascriptExecutor jse = (JavascriptExecutor)driver;
 			jse.executeScript("arguments[0].scrollIntoView(True)", ele);
+			jse.executeScript("arguments[0].click()", ele);
+		
 		} 
 		catch (Exception e) {
 		
@@ -398,7 +408,7 @@ public class BaseTest  {
 			Reports.reportStep("PASS", "The "  + ele.getText() + " was clicked successfully");
 		} 
 		catch (Exception e) {
-			Reports.reportStep("FAIL","The" +ele.getText()+ "wasn't clicked successfully");
+			Reports.reportStep("FAIL","The" +ele.getText()+ "wasn't clicked successfully"); 
 	
 			e.printStackTrace();
 		}
@@ -482,4 +492,19 @@ public class BaseTest  {
 			 }
 		 }		
 
+		 public void sikuliImages() throws FindFailed{
+			
+				 
+			 
+			 String sourcepath = "C:\\Users\\ganes\\OneDrive\\Documents\\Learning workspace\\ParikramaProject\\SikuliIMages\\";
+			 Screen scn = new Screen();
+			 
+			 Pattern p1 = new Pattern(sourcepath + "report-img-1280-600.png");
+			 scn.find(p1);
+			 scn.click(p1);
+		 }
+			 
+		
+		 
+		
 }

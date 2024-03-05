@@ -1,32 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-02-28T12:27:50 IST" name="Suite" finished-at="2024-02-28T12:28:42 IST" duration-ms="51596">
+  <suite started-at="2024-03-02T12:44:09 IST" name="Suite" finished-at="2024-03-02T12:45:51 IST" duration-ms="101530">
     <groups>
     </groups>
-    <test started-at="2024-02-28T12:27:50 IST" name="Test" finished-at="2024-02-28T12:28:42 IST" duration-ms="51596">
+    <test started-at="2024-03-02T12:44:09 IST" name="Test" finished-at="2024-03-02T12:45:51 IST" duration-ms="101530">
       <class name="com.parikrama.test.SigninTest">
-        <test-method signature="loginParikrama()[pri:0, instance:com.parikrama.test.SigninTest@48075da3]" started-at="2024-02-28T12:27:50 IST" name="loginParikrama" finished-at="2024-02-28T12:28:24 IST" duration-ms="33730" status="PASS">
+        <test-method signature="loginParikrama()[pri:0, instance:com.parikrama.test.SigninTest@2767e23c]" started-at="2024-03-02T12:44:09 IST" name="loginParikrama" finished-at="2024-03-02T12:44:27 IST" duration-ms="17653" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginParikrama -->
       </class> <!-- com.parikrama.test.SigninTest -->
       <class name="com.parikrama.test.ReportPageTest">
-        <test-method signature="loginParikrama()[pri:0, instance:com.parikrama.test.ReportPageTest@5386659f]" started-at="2024-02-28T12:28:24 IST" name="loginParikrama" finished-at="2024-02-28T12:28:42 IST" duration-ms="17820" status="PASS">
+        <test-method signature="companyreportParikrama()[pri:0, instance:com.parikrama.test.ReportPageTest@3e08ff24]" started-at="2024-03-02T12:44:27 IST" name="companyreportParikrama" finished-at="2024-03-02T12:45:08 IST" duration-ms="40883" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginParikrama -->
+        </test-method> <!-- companyreportParikrama -->
       </class> <!-- com.parikrama.test.ReportPageTest -->
+      <class name="com.parikrama.test.AdminPageTest">
+        <test-method signature="adminDetailsParikrama()[pri:0, instance:com.parikrama.test.AdminPageTest@4d1c005e]" started-at="2024-03-02T12:45:08 IST" name="adminDetailsParikrama" finished-at="2024-03-02T12:45:51 IST" duration-ms="42938" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- adminDetailsParikrama -->
+      </class> <!-- com.parikrama.test.AdminPageTest -->
       <class name="com.parikrama.utils.Reports">
-        <test-method is-config="true" signature="startReport()[pri:0, instance:com.parikrama.utils.Reports@533bda92]" started-at="2024-02-28T12:27:50 IST" name="startReport" finished-at="2024-02-28T12:27:50 IST" duration-ms="337" status="PASS">
+        <test-method is-config="true" signature="startReport()[pri:0, instance:com.parikrama.utils.Reports@4d1bf319]" started-at="2024-03-02T12:44:09 IST" name="startReport" finished-at="2024-03-02T12:44:09 IST" duration-ms="460" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startReport -->
-        <test-method is-config="true" signature="endReport()[pri:0, instance:com.parikrama.utils.Reports@533bda92]" started-at="2024-02-28T12:28:42 IST" name="endReport" finished-at="2024-02-28T12:28:42 IST" duration-ms="377" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- endReport -->
       </class> <!-- com.parikrama.utils.Reports -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->

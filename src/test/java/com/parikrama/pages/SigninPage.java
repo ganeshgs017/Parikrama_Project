@@ -2,8 +2,8 @@ package com.parikrama.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import com.parikrama.utils.BaseTest;
+import com.parikrama.utils.SikuliUtils;
 
 public class SigninPage extends BaseTest {
 	
@@ -16,8 +16,8 @@ public class SigninPage extends BaseTest {
 	@FindBy(id = "captcha_code_input")
 	WebElement captchainput;
 	
-	@FindBy(name = "btnLogin")
-	WebElement Signin;
+	//@FindBy(name = "btnLogin")
+	//WebElement Signin;
 	
 	
 	public void enterUserName(String user) {
@@ -33,9 +33,19 @@ public class SigninPage extends BaseTest {
 
 	public void clicksignin () {
 		
-		clickAction(Signin);
+			
 		
+	//	clickAction(Signin);
+		try {
+			
+			SikuliUtils.clickImage();
+		}
 		
-	}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}	
+		
+	}	
 
 }

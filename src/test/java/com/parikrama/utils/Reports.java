@@ -2,7 +2,6 @@ package com.parikrama.utils;
 
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -15,7 +14,9 @@ public class Reports implements ITestListener{
 	
 	
 	
-	public static ExtentSparkReporter sparkReporter;
+	public static ExtentSparkReporter sparkReporter_Alltest;
+	public static ExtentSparkReporter sparkReporter_FailedTest;
+	public static ExtentSparkReporter sparkReporter_SkippedandWarningtest;
 	public static ExtentReports extentReports;
 	public static ExtentTest extentTest;
 	
@@ -25,15 +26,33 @@ public class Reports implements ITestListener{
 
 		try {
 
-			sparkReporter = new ExtentSparkReporter(System.getProperty("user.dir") +"/WebAutomation.html");
+			sparkReporter_Alltest = new ExtentSparkReporter(System.getProperty("user.dir") +"/AllTest.html");
 			extentReports = new ExtentReports();
+			sparkReporter_Alltest.config().setDocumentTitle("Parikrama Automation Report");
+			sparkReporter_Alltest.config().setReportName("parikrama WebAutomation Results");
+			sparkReporter_Alltest.config().setTheme(Theme.DARK);
+			sparkReporter_Alltest.config().setTimeStampFormat("EEEE, MMM dd, yyyy,hh:mm a '('zzz')'");
+           
+			sparkReporter_FailedTest = new ExtentSparkReporter(System.getProperty("user.dir") +"/FailedTest.html");
+			extentReports = new ExtentReports();
+			sparkReporter_FailedTest.config().setDocumentTitle("Parikrama Automation Report");
+			sparkReporter_FailedTest.config().setReportName("parikrama WebAutomation Results");
+			sparkReporter_FailedTest.config().setTheme(Theme.DARK);
+			sparkReporter_FailedTest.config().setTimeStampFormat("EEEE, MMM dd, yyyy,hh:mm a '('zzz')'");
+			 sparkReporter_Alltest.filter().statusFilter().as(new Status[] {Status.FAIL}).apply();
+				
+			
+			
+			sparkReporter_SkippedandWarningtest = new ExtentSparkReporter(System.getProperty("user.dir") +"/SkippedandWarning.html");
+			extentReports = new ExtentReports();
+			sparkReporter_SkippedandWarningtest.config().setDocumentTitle("Parikrama Automation Report"); 
+			sparkReporter_SkippedandWarningtest.config().setReportName("parikrama WebAutomation Results");
+			sparkReporter_SkippedandWarningtest.config().setTheme(Theme.DARK);
+			sparkReporter_SkippedandWarningtest.config().setTimeStampFormat("EEEE, MMM dd, yyyy,hh:mm a '('zzz')'");
+			sparkReporter_FailedTest.filter().statusFilter().as(new Status[] {Status.SKIP, Status.WARNING}).apply();
+		
 
-			sparkReporter.config().setDocumentTitle("W3Schools Automation Report");
-			sparkReporter.config().setReportName("W3schools WebAutomation Results");
-			sparkReporter.config().setTheme(Theme.DARK);
-			sparkReporter.config().setTimeStampFormat("EEEE, MMM dd, yyyy,hh:mm a '('zzz')'");
-
-			extentReports.attachReporter(sparkReporter);
+			extentReports.attachReporter(sparkReporter_Alltest,sparkReporter_FailedTest,sparkReporter_SkippedandWarningtest);
 
 		}
 
@@ -158,6 +177,7 @@ public class Reports implements ITestListener{
 	}
 	
 }
+
 }
 
 
